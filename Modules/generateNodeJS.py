@@ -52,6 +52,12 @@ if permissionPartTwo == 'y':
     os.system(f'cd "{project}"&&npm install express body-parser ejs')
 else:
     pass
+askmeplease = str(input("DO you wanna install Additional Modules (N: No, if yes separate modules name with ;\n)"))
+if askmeplease.lower() == 'n':
+    pass
+else:
+    askmeplease = askmeplease.replace(';', ' ')
+    os.system(f'cd "{project}"&&npm install {askmeplease}')
 print(Fore.MAGENTA+'Your main ejs files goes to "VIEWS" folder,\n\nFiles like CSS, JS, IMAGES goes to "STATICS" folder,\n\nRouters to "ROUTERS" folder\n\n')
 os.system(f'cd "{project}"&&mkdir views&&mkdir statics&&mkdir routers')
 os.system(f'mkdir "{project}"\\statics\\css')
